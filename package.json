@@ -1,0 +1,23 @@
+{
+  "name": "company-enrichment-app",
+  "version": "1.0.0",
+  "description": "AI-powered company research and enrichment pipeline",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "build:frontend": "cd frontend && npm run build"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "cheerio": "^1.0.0-rc.12",
+    "axios": "^1.6.0",
+    "openai": "^4.20.0",
+    "dotenv": "^16.3.1",
+    "robots-parser": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

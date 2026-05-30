@@ -1,0 +1,132 @@
+.company-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+.company-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  padding: 1.25rem 1.5rem;
+  cursor: pointer;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.card-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-company-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.expand-icon {
+  color: #94a3b8;
+  font-size: 0.8rem;
+}
+
+.card-website-name {
+  color: #4F46E5;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: 0.25rem;
+}
+
+.card-url {
+  color: #94a3b8;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+.card-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.card-body.expanded {
+  max-height: 1000px;
+  padding: 1.5rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.card-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.card-field.full-width {
+  grid-column: 1 / -1;
+}
+
+.field-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.field-value {
+  font-size: 0.95rem;
+  color: #334155;
+  word-break: break-word;
+}
+
+.email-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.email-link {
+  color: #4F46E5;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.email-link:hover {
+  text-decoration: underline;
+}
+
+.card-field.outreach {
+  background: #f0fdf4;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+}
+
+.outreach-text {
+  font-style: italic;
+  color: #166534;
+}
+
+.card-preview {
+  padding: 0.75rem 1.5rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.preview-service {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}

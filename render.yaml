@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: company-enrichment
+    runtime: node
+    buildCommand: npm install && cd frontend && npm install && npx vite build && cd .. && node seed-data.js
+    startCommand: node server.js
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: NODE_ENV
+        value: production
