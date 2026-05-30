@@ -18,7 +18,7 @@ Dependencies cell:
 # ============================================================
 # CELL 1: Install Dependencies
 # ============================================================
-# !pip install beautifulsoup4 requests openai
+# !pip install beautifulsoup4 requests openai lxml
 
 # ============================================================
 # CELL 2: Imports and Configuration
@@ -34,20 +34,28 @@ from openai import OpenAI
 # ============================================================
 # CELL 3: Set your API Key
 # ============================================================
-# Replace with your actual API key or use Colab secrets
 import os
-from google.colab import userdata
 
-# Try to get API key from Colab secrets, fallback to manual input
+# OpenRouter API Key - uses Colab secrets or prompts for input
+OPENROUTER_API_KEY = None
+
 try:
+    from google.colab import userdata
     OPENROUTER_API_KEY = userdata.get('OPENROUTER_API_KEY')
 except:
+    pass
+
+if not OPENROUTER_API_KEY:
+    OPENROUTER_API_KEY = os.environ.get('OPENROUTER_API_KEY')
+
+if not OPENROUTER_API_KEY:
     OPENROUTER_API_KEY = input("Enter your OpenRouter API Key: ")
 
 client = OpenAI(
     api_key=OPENROUTER_API_KEY,
     base_url="https://openrouter.ai/api/v1",
 )
+print("✓ AI client initialized (OpenRouter)")
 
 # ============================================================
 # CELL 4: Scraping Functions
@@ -395,7 +403,12 @@ Return ONLY the JSON object, no markdown formatting, no code blocks."""
         )
 
         content = response.choices[0].message.content
-        parsed = json.loads(content)
+        # Handle potential markdown wrapping
+        json_str = content.strip()
+        if json_str.startswith('```'):
+            json_str = re.sub(r'^```(?:json)?\n?', '', json_str)
+            json_str = re.sub(r'\n?```$', '', json_str)
+        parsed = json.loads(json_str)
 
         # Ensure schema compliance
         return {
