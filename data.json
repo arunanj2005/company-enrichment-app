@@ -84,6 +84,23 @@
       "probable_pain_point": "Information scattered across multiple tools (docs, wikis, project boards), making it hard to maintain a single source of truth for team knowledge",
       "outreach_opener": "Hi team, I noticed Notion is transforming how teams organize their work and knowledge. I'd love to share how we can help your enterprise customers improve adoption rates and reduce onboarding friction for new team members.",
       "created_at": "2026-05-30T07:47:37.189Z"
+    },
+    {
+      "id": 1780128863012,
+      "url": "https://www.stripe.com",
+      "website_name": "Stripe",
+      "company_name": "Stripe, Inc.",
+      "address": "N/A",
+      "mobile_number": "+1 888 926 2289",
+      "mail": [
+        "jane.diaz@stripe.com",
+        "sales@stripe.com"
+      ],
+      "core_service": "Stripe is a financial services platform that enables businesses to accept payments, manage billing models, and facilitate money movement.",
+      "target_customer": "Businesses of all sizes looking to optimize their payment processing and financial operations.",
+      "probable_pain_point": "Businesses struggle with managing complex payment systems and require reliable solutions for payment processing and fraud prevention.",
+      "outreach_opener": "Hi Jane, I came across Stripe's impressive suite of financial tools and would love to discuss how we can help businesses further streamline their payment processes.",
+      "created_at": "2026-05-30T08:14:23.012Z"
     }
   ]
 }

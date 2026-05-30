@@ -1,8 +1,20 @@
 const OpenAI = require('openai');
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+let openai = null;
+
+function getClient() {
+  if (!openai) {
+    const apiKey = process.env.OPENROUTER_API_KEY || process.env.OPENAI_API_KEY;
+    if (!apiKey || apiKey === 'your-openai-api-key-here' || apiKey === 'sk-placeholder-add-your-key') {
+      return null;
+    }
+    openai = new OpenAI({
+      apiKey,
+      baseURL: 'https://openrouter.ai/api/v1',
+    });
+  }
+  return openai;
+}
 
 /**
  * Truncate text to fit within token budget
@@ -80,15 +92,32 @@ ${context}
 Return ONLY the JSON object, no markdown formatting, no code blocks.`;
 
   try {
-    const response = await openai.chat.completions.create({
-      model: 'gpt-4o-mini',
+    const client = getClient();
+    if (!client) {
+      console.error('[Enricher] No OpenAI API key configured');
+      const meta = scrapedData.meta || {};
+      const contact = scrapedData.contactInfo || {};
+      return {
+        website_name: meta.title || 'N/A',
+        company_name: meta.siteName || meta.title || 'N/A',
+        address: 'N/A',
+        mobile_number: contact.phones?.[0] || 'N/A',
+        mail: contact.emails || [],
+        core_service: meta.description || 'N/A',
+        target_customer: 'N/A',
+        probable_pain_point: 'N/A',
+        outreach_opener: 'N/A',
+      };
+    }
+
+    const response = await client.chat.completions.create({
+      model: 'openai/gpt-4o-mini',
       messages: [
         { role: 'system', content: systemPrompt },
         { role: 'user', content: userPrompt }
       ],
       temperature: 0.3,
       max_tokens: 800,
-      response_format: { type: 'json_object' },
     });
 
     const content = response.choices[0].message.content;

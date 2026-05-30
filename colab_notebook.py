@@ -40,11 +40,14 @@ from google.colab import userdata
 
 # Try to get API key from Colab secrets, fallback to manual input
 try:
-    OPENAI_API_KEY = userdata.get('OPENAI_API_KEY')
+    OPENROUTER_API_KEY = userdata.get('OPENROUTER_API_KEY')
 except:
-    OPENAI_API_KEY = input("Enter your OpenAI API Key: ")
+    OPENROUTER_API_KEY = input("Enter your OpenRouter API Key: ")
 
-client = OpenAI(api_key=OPENAI_API_KEY)
+client = OpenAI(
+    api_key=OPENROUTER_API_KEY,
+    base_url="https://openrouter.ai/api/v1",
+)
 
 # ============================================================
 # CELL 4: Scraping Functions
@@ -382,14 +385,13 @@ Return ONLY the JSON object, no markdown formatting, no code blocks."""
 
     try:
         response = client.chat.completions.create(
-            model='gpt-4o-mini',
+            model='openai/gpt-4o-mini',
             messages=[
                 {'role': 'system', 'content': system_prompt},
                 {'role': 'user', 'content': user_prompt}
             ],
             temperature=0.3,
             max_tokens=800,
-            response_format={'type': 'json_object'},
         )
 
         content = response.choices[0].message.content
