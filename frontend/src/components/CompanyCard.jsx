@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './CompanyCard.css';
 
 function CompanyCard({ company }) {
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(true);
 
   const renderEmails = (mail) => {
     if (!mail || (Array.isArray(mail) && mail.length === 0)) return 'N/A';

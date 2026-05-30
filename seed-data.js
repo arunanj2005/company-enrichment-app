@@ -1,90 +1,19 @@
 /**
- * Seed script to pre-populate the database with sample enriched companies.
+ * Seed script - initializes data.json if it doesn't exist.
  * Run: node seed-data.js
  * 
- * This adds realistic sample data so the UI has content to display.
+ * On deployment, this ensures the app has an empty but valid data file.
+ * Pre-enriched data should be added by running the app and using the /enrichInput endpoint.
  */
 
-const { saveCompany } = require('./database');
+const fs = require('fs');
+const path = require('path');
 
-const sampleCompanies = [
-  {
-    url: 'https://www.stripe.com',
-    data: {
-      website_name: 'Stripe',
-      company_name: 'Stripe, Inc.',
-      address: '354 Oyster Point Blvd, South San Francisco, CA 94080',
-      mobile_number: 'N/A',
-      mail: ['support@stripe.com', 'sales@stripe.com'],
-      core_service: 'Online payment processing and financial infrastructure for internet businesses',
-      target_customer: 'Internet businesses of all sizes, from startups to large enterprises, needing to accept payments online',
-      probable_pain_point: 'Complex payment integration, managing multiple payment methods across geographies, and handling compliance/security requirements',
-      outreach_opener: 'Hi team, I noticed Stripe is expanding its financial infrastructure offerings globally. I\'d love to share how we can help streamline your developer onboarding experience and reduce integration time by 40%.',
-    }
-  },
-  {
-    url: 'https://www.hubspot.com',
-    data: {
-      website_name: 'HubSpot',
-      company_name: 'HubSpot, Inc.',
-      address: '2 Canal Park, Cambridge, MA 02141',
-      mobile_number: '+1-888-482-7768',
-      mail: ['info@hubspot.com', 'support@hubspot.com'],
-      core_service: 'All-in-one CRM platform with marketing, sales, customer service, and content management tools',
-      target_customer: 'Small to mid-market B2B companies looking to grow their inbound marketing and sales pipeline',
-      probable_pain_point: 'Disconnected marketing and sales tools leading to poor lead handoff and difficulty measuring ROI across the funnel',
-      outreach_opener: 'Hi team, I see HubSpot is helping thousands of businesses unify their go-to-market efforts. I\'d love to discuss how we can help your customers reduce their tech stack complexity while improving conversion rates.',
-    }
-  },
-  {
-    url: 'https://www.shopify.com',
-    data: {
-      website_name: 'Shopify',
-      company_name: 'Shopify Inc.',
-      address: '151 O\'Connor Street, Ottawa, ON K2P 2L8, Canada',
-      mobile_number: '+1-888-746-7439',
-      mail: ['support@shopify.com', 'press@shopify.com'],
-      core_service: 'E-commerce platform enabling businesses to create online stores, manage inventory, and process payments',
-      target_customer: 'Entrepreneurs, small businesses, and growing brands looking to sell products online and in-person',
-      probable_pain_point: 'Managing multi-channel sales, inventory synchronization across platforms, and scaling operations without dedicated engineering teams',
-      outreach_opener: 'Hi team, I noticed Shopify is empowering millions of merchants worldwide. I\'d love to share how we can help your merchants reduce cart abandonment rates and improve their checkout conversion by 25%.',
-    }
-  },
-  {
-    url: 'https://www.datadog.com',
-    data: {
-      website_name: 'Datadog',
-      company_name: 'Datadog, Inc.',
-      address: '620 8th Avenue, 45th Floor, New York, NY 10018',
-      mobile_number: 'N/A',
-      mail: ['info@datadoghq.com', 'sales@datadoghq.com'],
-      core_service: 'Cloud-scale monitoring and security platform for infrastructure, applications, and logs',
-      target_customer: 'DevOps teams and engineering organizations running cloud-native applications at scale',
-      probable_pain_point: 'Fragmented observability across microservices, difficulty correlating metrics/logs/traces, and alert fatigue from disconnected monitoring tools',
-      outreach_opener: 'Hi team, I see Datadog is leading the charge in unified observability for cloud environments. I\'d love to discuss how we can help your customers reduce mean-time-to-resolution by consolidating their monitoring workflows.',
-    }
-  },
-  {
-    url: 'https://www.notion.so',
-    data: {
-      website_name: 'Notion',
-      company_name: 'Notion Labs, Inc.',
-      address: '2300 Harrison Street, San Francisco, CA 94110',
-      mobile_number: 'N/A',
-      mail: ['team@makenotion.com', 'press@makenotion.com'],
-      core_service: 'All-in-one workspace for notes, docs, project management, and knowledge bases',
-      target_customer: 'Teams and individuals seeking a unified workspace to replace multiple productivity tools',
-      probable_pain_point: 'Information scattered across multiple tools (docs, wikis, project boards), making it hard to maintain a single source of truth for team knowledge',
-      outreach_opener: 'Hi team, I noticed Notion is transforming how teams organize their work and knowledge. I\'d love to share how we can help your enterprise customers improve adoption rates and reduce onboarding friction for new team members.',
-    }
-  }
-];
+const DB_PATH = path.join(__dirname, 'data.json');
 
-console.log('Seeding database with sample companies...');
-
-for (const company of sampleCompanies) {
-  saveCompany(company.url, company.data);
-  console.log(`  ✓ Added: ${company.data.company_name}`);
+if (!fs.existsSync(DB_PATH)) {
+  fs.writeFileSync(DB_PATH, JSON.stringify({ companies: [] }, null, 2));
+  console.log('Created empty data.json');
+} else {
+  console.log('data.json already exists, skipping seed.');
 }
-
-console.log(`\nDone! Seeded ${sampleCompanies.length} companies.`);

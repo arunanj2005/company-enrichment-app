@@ -121,7 +121,12 @@ Return ONLY the JSON object, no markdown formatting, no code blocks.`;
     });
 
     const content = response.choices[0].message.content;
-    const parsed = JSON.parse(content);
+    // Handle potential markdown wrapping
+    let jsonStr = content.trim();
+    if (jsonStr.startsWith('```')) {
+      jsonStr = jsonStr.replace(/^```(?:json)?\n?/, '').replace(/\n?```$/, '');
+    }
+    const parsed = JSON.parse(jsonStr);
 
     // Ensure schema compliance
     return {

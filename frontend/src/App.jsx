@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import EnrichSection from './components/EnrichSection';
 import ResultsSection from './components/ResultsSection';
 import './App.css';

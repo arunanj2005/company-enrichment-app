@@ -1,24 +1,53 @@
 {
   "companies": [
     {
-      "id": 1780127257183,
-      "url": "https://www.stripe.com",
-      "website_name": "Stripe",
-      "company_name": "Stripe, Inc.",
-      "address": "354 Oyster Point Blvd, South San Francisco, CA 94080",
+      "id": 1780129311861,
+      "url": "https://www.notion.so",
+      "website_name": "Notion",
+      "company_name": "Notion Labs, Inc.",
+      "address": "N/A",
       "mobile_number": "N/A",
       "mail": [
-        "support@stripe.com",
-        "sales@stripe.com"
+        "team@makenotion.com"
       ],
-      "core_service": "Online payment processing and financial infrastructure for internet businesses",
-      "target_customer": "Internet businesses of all sizes, from startups to large enterprises, needing to accept payments online",
-      "probable_pain_point": "Complex payment integration, managing multiple payment methods across geographies, and handling compliance/security requirements",
-      "outreach_opener": "Hi team, I noticed Stripe is expanding its financial infrastructure offerings globally. I'd love to share how we can help streamline your developer onboarding experience and reduce integration time by 40%.",
-      "created_at": "2026-05-30T07:47:37.183Z"
+      "core_service": "An all-in-one workspace that combines project management, documentation, and collaboration tools, enabling teams to work more efficiently.",
+      "target_customer": "Teams and organizations of all sizes looking to streamline their workflows and enhance collaboration.",
+      "probable_pain_point": "Managing multiple tools and information silos that hinder productivity and team alignment.",
+      "outreach_opener": "Hi there! I noticed how Notion empowers teams to streamline their workflows, and I believe our solutions could further enhance your productivity efforts.",
+      "created_at": "2026-05-30T08:21:51.861Z"
     },
     {
-      "id": 1780127257185,
+      "id": 1780129270964,
+      "url": "https://www.intercom.com",
+      "website_name": "Intercom",
+      "company_name": "Intercom",
+      "address": "55 2nd Street, 4th Floor, San Francisco, CA 94105",
+      "mobile_number": "508-4235478",
+      "mail": [
+        "press@intercom.com"
+      ],
+      "core_service": "AI-powered customer service platform with integrated AI Agent for enhancing customer experiences across various channels.",
+      "target_customer": "Businesses looking to improve customer support and engagement through AI-driven solutions.",
+      "probable_pain_point": "Challenges in providing timely and effective customer support while managing high volumes of inquiries.",
+      "outreach_opener": "Hi there, I came across Intercom and was impressed by your innovative AI solutions for customer service. I'd love to explore how we might collaborate to enhance customer experiences even further.",
+      "created_at": "2026-05-30T08:21:10.964Z"
+    },
+    {
+      "id": 1780129119779,
+      "url": "https://www.zapier.com",
+      "website_name": "Zapier",
+      "company_name": "Zapier, Inc.",
+      "address": "N/A",
+      "mobile_number": "N/A",
+      "mail": [],
+      "core_service": "Zapier provides an automation platform that connects over 9,000 apps to streamline workflows and facilitate data movement across various business tools.",
+      "target_customer": "Businesses of all sizes looking to automate workflows and improve operational efficiency.",
+      "probable_pain_point": "Many businesses struggle with inefficient manual processes and the need for seamless integration between various applications.",
+      "outreach_opener": "Hi there! I noticed that Zapier is empowering businesses to automate workflows across thousands of apps, and I'd love to discuss how we can further enhance your automation capabilities.",
+      "created_at": "2026-05-30T08:18:39.779Z"
+    },
+    {
+      "id": 1780128995165,
       "url": "https://www.hubspot.com",
       "website_name": "HubSpot",
       "company_name": "HubSpot, Inc.",
@@ -32,10 +61,10 @@
       "target_customer": "Small to mid-market B2B companies looking to grow their inbound marketing and sales pipeline",
       "probable_pain_point": "Disconnected marketing and sales tools leading to poor lead handoff and difficulty measuring ROI across the funnel",
       "outreach_opener": "Hi team, I see HubSpot is helping thousands of businesses unify their go-to-market efforts. I'd love to discuss how we can help your customers reduce their tech stack complexity while improving conversion rates.",
-      "created_at": "2026-05-30T07:47:37.185Z"
+      "created_at": "2026-05-30T08:16:35.165Z"
     },
     {
-      "id": 1780127257186,
+      "id": 1780128995165,
       "url": "https://www.shopify.com",
       "website_name": "Shopify",
       "company_name": "Shopify Inc.",
@@ -49,10 +78,10 @@
       "target_customer": "Entrepreneurs, small businesses, and growing brands looking to sell products online and in-person",
       "probable_pain_point": "Managing multi-channel sales, inventory synchronization across platforms, and scaling operations without dedicated engineering teams",
       "outreach_opener": "Hi team, I noticed Shopify is empowering millions of merchants worldwide. I'd love to share how we can help your merchants reduce cart abandonment rates and improve their checkout conversion by 25%.",
-      "created_at": "2026-05-30T07:47:37.186Z"
+      "created_at": "2026-05-30T08:16:35.165Z"
     },
     {
-      "id": 1780127257188,
+      "id": 1780128995165,
       "url": "https://www.datadog.com",
       "website_name": "Datadog",
       "company_name": "Datadog, Inc.",
@@ -66,41 +95,24 @@
       "target_customer": "DevOps teams and engineering organizations running cloud-native applications at scale",
       "probable_pain_point": "Fragmented observability across microservices, difficulty correlating metrics/logs/traces, and alert fatigue from disconnected monitoring tools",
       "outreach_opener": "Hi team, I see Datadog is leading the charge in unified observability for cloud environments. I'd love to discuss how we can help your customers reduce mean-time-to-resolution by consolidating their monitoring workflows.",
-      "created_at": "2026-05-30T07:47:37.188Z"
+      "created_at": "2026-05-30T08:16:35.165Z"
     },
     {
-      "id": 1780127257189,
-      "url": "https://www.notion.so",
-      "website_name": "Notion",
-      "company_name": "Notion Labs, Inc.",
-      "address": "2300 Harrison Street, San Francisco, CA 94110",
-      "mobile_number": "N/A",
-      "mail": [
-        "team@makenotion.com",
-        "press@makenotion.com"
-      ],
-      "core_service": "All-in-one workspace for notes, docs, project management, and knowledge bases",
-      "target_customer": "Teams and individuals seeking a unified workspace to replace multiple productivity tools",
-      "probable_pain_point": "Information scattered across multiple tools (docs, wikis, project boards), making it hard to maintain a single source of truth for team knowledge",
-      "outreach_opener": "Hi team, I noticed Notion is transforming how teams organize their work and knowledge. I'd love to share how we can help your enterprise customers improve adoption rates and reduce onboarding friction for new team members.",
-      "created_at": "2026-05-30T07:47:37.189Z"
-    },
-    {
-      "id": 1780128863012,
+      "id": 1780128995160,
       "url": "https://www.stripe.com",
       "website_name": "Stripe",
       "company_name": "Stripe, Inc.",
-      "address": "N/A",
-      "mobile_number": "+1 888 926 2289",
+      "address": "354 Oyster Point Blvd, South San Francisco, CA 94080",
+      "mobile_number": "N/A",
       "mail": [
-        "jane.diaz@stripe.com",
+        "support@stripe.com",
         "sales@stripe.com"
       ],
-      "core_service": "Stripe is a financial services platform that enables businesses to accept payments, manage billing models, and facilitate money movement.",
-      "target_customer": "Businesses of all sizes looking to optimize their payment processing and financial operations.",
-      "probable_pain_point": "Businesses struggle with managing complex payment systems and require reliable solutions for payment processing and fraud prevention.",
-      "outreach_opener": "Hi Jane, I came across Stripe's impressive suite of financial tools and would love to discuss how we can help businesses further streamline their payment processes.",
-      "created_at": "2026-05-30T08:14:23.012Z"
+      "core_service": "Online payment processing and financial infrastructure for internet businesses",
+      "target_customer": "Internet businesses of all sizes, from startups to large enterprises, needing to accept payments online",
+      "probable_pain_point": "Complex payment integration, managing multiple payment methods across geographies, and handling compliance/security requirements",
+      "outreach_opener": "Hi team, I noticed Stripe is expanding its financial infrastructure offerings globally. I'd love to share how we can help streamline your developer onboarding experience and reduce integration time by 40%.",
+      "created_at": "2026-05-30T08:16:35.160Z"
     }
   ]
 }
